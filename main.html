@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Project 2 Main</title>
+</head>
+<body>
+<!-- Body Ideen?? Links Navi Leiste und Top Navi Leiste -->
+<!-- Tabs zum switchen zwischen hr und  other--> 
+        <div class="tab">
+	  <button class="tablinks" onclick="naviTabs(event, 'hours')">Stundenaufzeichnung</button>
+	  <button class="tablinks" onclick="naviTabs(event, 'hours_extended')">Stundenaufzeichnung (erweitert)</button>
+	</div>
+
+<!-- Tab content -->
+	<div id="hours" class="tabcontent">
+	  <div id="iframe">
+	  <iframe src="hr.php"></iframe>
+	  </div>
+	</div>
+
+	<div id="hours_extended" class="tabcontent">
+	  <h3>Erweiterte Stundenaufzeichnung</h3>
+	  <p>Coming soon...</p>
+	  <img src="Pictures/Presslufthammer.gif">
+	</div>
+
+
+
+
+<script>function naviTabs(evt, hourName) {
+  
+    var i, tabcontent, tablinks;
+
+    
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+   
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+   
+    document.getElementById(hourName).style.display = "block";
+    evt.currentTarget.className += " active";
+}</script>
+
+
+
+</body>
+</html>
